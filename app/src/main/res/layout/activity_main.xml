@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <TextView
+            android:text="@string/bill_amount_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/billAmountLabel"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="50dp"
+            app:layout_constraintEnd_toStartOf="@+id/billAmountInput"
+            android:layout_marginEnd="79dp"
+            />
+
+    <TextView
+            android:text="@string/percent_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/percentLabel"
+            app:layout_constraintTop_toBottomOf="@+id/billAmountLabel"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="@+id/billAmountLabel"/>
+
+    <TextView
+            android:text="@string/tip_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tipLabel"
+            app:layout_constraintTop_toBottomOf="@+id/percentLabel"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="@+id/percentLabel"/>
+
+    <TextView
+            android:text="@string/total_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/totalLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tipLabel"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="@+id/tipLabel"/>
+
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/billAmountInput"
+            app:layout_constraintBottom_toBottomOf="@+id/billAmountLabel"
+            app:layout_constraintTop_toTopOf="@+id/billAmountLabel"
+            app:layout_constraintVertical_bias="0.551"
+            tools:ignore="SpeakableTextPresentCheck"
+            app:layout_constraintStart_toEndOf="@+id/billAmountLabel"
+            android:layout_marginEnd="132dp"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+            android:layout_width="78dp"
+            android:layout_height="48dp"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/percentageInput"
+            app:layout_constraintStart_toStartOf="@+id/billAmountInput"
+            app:layout_constraintBottom_toBottomOf="@+id/percentLabel"
+            app:layout_constraintTop_toBottomOf="@+id/billAmountInput"
+            tools:ignore="SpeakableTextPresentCheck"
+            />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tipInput"
+            app:layout_constraintTop_toTopOf="@+id/tipLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/tipLabel"
+            app:layout_constraintStart_toStartOf="@+id/percentageInput"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/totalInput"
+            app:layout_constraintTop_toTopOf="@+id/totalLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/totalLabel"
+            app:layout_constraintStart_toStartOf="@+id/tipInput"/>
+    app:layout_constraintTop_toTopOf="@+id/percentLabel"
+</androidx.constraintlayout.widget.ConstraintLayout>
