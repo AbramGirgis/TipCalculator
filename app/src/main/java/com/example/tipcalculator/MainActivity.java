@@ -67,7 +67,7 @@ public class MainActivity extends Activity implements TextView.OnEditorActionLis
         tipPercent = savedValues.getFloat("tipPercent", 15f);
         billAmountEditText.setText(String.valueOf(billAmount));
         percentageEditText.setText(String.valueOf(tipPercent));
-        tipTextView.setText(String.valueOf(tipPercent));
+//        tipTextView.setText(String.valueOf(tipPercent));
         calculateAndDisplay();
     }
 
