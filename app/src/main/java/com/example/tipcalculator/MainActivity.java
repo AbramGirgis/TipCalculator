@@ -1,5 +1,6 @@
 package com.example.tipcalculator;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
@@ -24,6 +25,7 @@ public class MainActivity extends Activity implements TextView.OnEditorActionLis
    //The onCreate method begins by calling the onCreate method of the super- class,
    // which is necessary for the superclass to work correctly. Then, it uses the
    // setContentView method that’s available from the superclass to display the user interface that’s defined in the XML file for the activity.
+    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +66,7 @@ public class MainActivity extends Activity implements TextView.OnEditorActionLis
         billAmount = savedValues.getFloat("billAmount", 0.0f);
         tipPercent = savedValues.getFloat("tipPercent", 15f);
         billAmountEditText.setText(String.valueOf(billAmount));
+        percentageEditText.setText(String.valueOf(tipPercent));
         tipTextView.setText(String.valueOf(tipPercent));
         calculateAndDisplay();
     }
@@ -76,7 +79,7 @@ public class MainActivity extends Activity implements TextView.OnEditorActionLis
     // widgets.
     private void calculateAndDisplay() {
         billAmount = Float.parseFloat(billAmountEditText.getText().toString());
-        tipPercent = Float.parseFloat(tipTextView.getText().toString());
+        tipPercent = Float.parseFloat(percentageEditText.getText().toString());
         float tipAmount = billAmount * (tipPercent / 100);
         float totalAmount = billAmount + tipAmount;
 
